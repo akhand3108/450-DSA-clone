@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import Badge from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
 import "./footer.css";

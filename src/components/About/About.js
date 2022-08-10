@@ -5,7 +5,6 @@ import Badge from "react-bootstrap/Badge";
 import Spinner from "react-bootstrap/Spinner";
 import Fade from "react-reveal/Fade";
 
-import { getStorage,getDownloadURL, ref,uploadBytes, storageRef, getBytes } from 'firebase/storage';
 
 export default function About({ resetData, exportData, importData, uploadData,downloadData }) {
 	const inputFile = useRef(null);
