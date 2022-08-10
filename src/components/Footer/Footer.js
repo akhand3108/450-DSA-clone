@@ -1,8 +1,9 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import Badge from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
 import "./footer.css";
-export default function Footer({ dark, setDark }) {
+export default function Footer({ dark, setDark } ){
 	return (
 		<div>
 			<footer className="footer" style={{ backgroundColor: dark ? "#393E46" : "" }}>
@@ -19,6 +20,8 @@ export default function Footer({ dark, setDark }) {
 							</h4>
 						</a>
 					</div>
+
+					
 					<div className="ml-auto p-2 bd-highlight footer-toggle">
 						<h4>
 							{/* toggle dark mode */}

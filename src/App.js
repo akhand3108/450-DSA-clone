@@ -7,24 +7,32 @@ import TopicCard from './components/TopicCard/TopicCard';
 import Topic from './components/Topic/Topic';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
-import ReactGA from 'react-ga';
 import './App.css';
+import { Button } from 'react-bootstrap';
+import {getDownloadURL, ref,uploadBytes,} from 'firebase/storage';
 
+import storage  from './firebase/config';
+
+import { useHistory } from "react-router-dom";
 // Creating a theme context
 export const ThemeContext = createContext(null);
 
 function App() {
 	// setting state for data received from the DB
 	const [questionData, setquestionData] = useState([]);
+	const [uploadSpinnerState, setUploadSpinnerState] = useState(false);
+	const [downloadSpinnerState,setDownloadSpinnerState] = useState(false);
+	let history = useHistory();
 
 	// if dark theme is enabled or not
 	const [dark, setDark] = useState(false);
 
+
 	// useEffect for fetching data from DB on load and init GA
 	useEffect(() => {
 		localStorage.removeItem('cid');
-		ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
-		ReactGA.pageview(window.location.pathname + window.location.search);
+		// ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+		// ReactGA.pageview(window.location.pathname + window.location.search);
 		getData((QuestionData) => {
 			setquestionData(QuestionData);
 		});
@@ -85,11 +93,69 @@ function App() {
 		});
 	}
 
+
+	// Upload Progress State
+
+	async function uploadData(callback){
+		exportDBData((data) => {
+			const fileData = JSON.stringify(data);
+			const blob = new Blob([fileData], { type: 'text/json' });
+			
+			const storageRef = ref(storage,'app/progress');
+			uploadBytes(storageRef,blob).then(snap=>{
+				callback();
+			})
+		})
+	};
+
+	// Download Progress State
+
+	async function downloadData(callback){
+		const storageRef = ref(storage,'app/progress');	
+		getDownloadURL(storageRef)
+		.then((url) => {
+			fetch(url)
+			.then(function(response) {
+				return response.json();
+			})
+			.then(function(jsonResponse) {
+				callback();
+				importData(jsonResponse, () => {
+					history.push("/");
+				});
+			});
+			
+		})
+	}
+	
+
 	return (
 		<Router>
 			<div className={dark ? 'App dark' : 'App'}>
+				
 				<h1 className='app-heading text-center mt-5' style={{ color: dark ? 'white' : '' }}>
-					450 DSA Cracker
+					<a className="mr-5" href="/">450 DSA Cracker</a>
+					
+					<Button size='sm' className='ml-4 mx-2 mt-1' variant="outline-success" onClick={() => {
+									setUploadSpinnerState(true);
+									// inputFile.current.click();
+									uploadData(()=>{
+										setUploadSpinnerState(false);
+									})
+								}}> Upload
+						<Spinner animation="border" variant="light" size="sm" style={uploadSpinnerState ? {} : { display: "none" }} />
+					</Button>
+					<Button size='sm' className='mx-2 mt-1' variant="outline-info" style={{ cursor: "pointer" }}
+								onClick={() => {
+									setDownloadSpinnerState(true);
+									downloadData(()=>{
+										setDownloadSpinnerState(false);
+									});
+
+								}}> Download
+								<Spinner animation="border" variant="light" size="sm" style={downloadSpinnerState ? {} : { display: "none" }} />
+								</Button>
+				
 				</h1>
 
 				{questionData.length === 0 ? (
@@ -109,6 +175,8 @@ function App() {
 										resetData={resetData}
 										exportData={exportData}
 										importData={importData}
+										uploadData={uploadData}
+										downloadData={downloadData}
 										setQuestionData={setquestionData}
 									></About>
 								}

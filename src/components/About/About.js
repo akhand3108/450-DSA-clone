@@ -5,11 +5,15 @@ import Badge from "react-bootstrap/Badge";
 import Spinner from "react-bootstrap/Spinner";
 import Fade from "react-reveal/Fade";
 
-export default function About({ resetData, exportData, importData }) {
+import { getStorage,getDownloadURL, ref,uploadBytes, storageRef, getBytes } from 'firebase/storage';
+
+export default function About({ resetData, exportData, importData, uploadData,downloadData }) {
 	const inputFile = useRef(null);
 	let history = useHistory();
 	const [importSpinnerState, setImportSpinnerState] = useState(false);
 	const [exportSpinnerState, setExportSpinnerState] = useState(false);
+	const [uploadSpinnerState, setUploadSpinnerState] = useState(false);
+	const [downloadSpinnerState,setDownloadSpinnerState] = useState(false);
 	// About component takes resetData() from App <Component> to trigger DB data reset
 	function handleChange(e) {
 		const fileReader = new FileReader();
@@ -41,7 +45,7 @@ export default function About({ resetData, exportData, importData }) {
 					</div>
 					<div className="container my-5">
 						<h2 className="text-center">
-							<a href="https://www.450dsa.com">450dsa</a> is your personal web-based progress tracker based on <br></br>
+							<a href="/">450dsa</a> is your personal web-based progress tracker based on <br></br>
 							<i>
 								<a
 									href="https://drive.google.com/file/d/1FMdN_OCfOI0iAeDlqswCiC2DZzD4nPsb/view"
@@ -109,6 +113,37 @@ export default function About({ resetData, exportData, importData }) {
 							>
 								Import Progress{" "}
 								<Spinner animation="border" variant="light" size="sm" style={importSpinnerState ? {} : { display: "none" }} />
+							</Badge>
+							{" "}
+							<Badge
+								variant="success"
+								as="a"
+								style={{ cursor: "pointer" }}
+								onClick={() => {
+									setUploadSpinnerState(true);
+									// inputFile.current.click();
+									uploadData(()=>{
+										setUploadSpinnerState(false);
+									})
+								}}
+							>
+								Upload Progress{" "}
+								<Spinner animation="border" variant="light" size="sm" style={uploadSpinnerState ? {} : { display: "none" }} />
+							</Badge>{" "}
+							<Badge
+								variant="info"
+								as="a"
+								style={{ cursor: "pointer" }}
+								onClick={() => {
+									setDownloadSpinnerState(true);
+									downloadData(()=>{
+										setDownloadSpinnerState(false);
+									});
+
+								}}
+							>
+								Download Progress{" "}
+								<Spinner animation="border" variant="light" size="sm" style={downloadSpinnerState ? {} : { display: "none" }} />
 							</Badge>
 						</h5>
 						<h3 className="text-center my-5">
