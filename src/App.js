@@ -134,7 +134,7 @@ function App() {
 			<div className={dark ? 'App dark' : 'App'}>
 				
 				<h1 className='app-heading text-center mt-5' style={{ color: dark ? 'white' : '' }}>
-					<a className="mr-5" href="/">450 DSA Cracker</a>
+					<a className="mr-5" href="/">450 Akhand</a>
 					
 					<Button size='sm' className='ml-4 mx-2 mt-1' variant="outline-success" onClick={() => {
 									setUploadSpinnerState(true);
