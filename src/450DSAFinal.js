@@ -11,7 +11,7 @@ export default [
 				"Done": false,
 				"Bookmark": false,
 				"Notes": "",
-				"URL": "https://practice.geeksforgeeks.org/problems/reverse-an-array/0",
+				"URL": "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/",
 				"URL2": "https://www.codingninjas.com/codestudio/problems/reverse-the-array_1262298?topList=love-babbar-dsa-sheet-problems"
 			},
 			{
@@ -908,7 +908,7 @@ export default [
 				"Done": false,
 				"Bookmark": false,
 				"Notes": "",
-				"URL": "https://www.geeksforgeeks.org/searching-array-adjacent-differ-k/",
+				"URL": "https://practice.geeksforgeeks.org/problems/searching-in-an-array-where-adjacent-differ-by-at-most-k0456/1",
 				"URL2": "https://www.codingninjas.com/codestudio/problems/find-student_3161883?topList=love-babbar-dsa-sheet-problems"
 			},
 			{
@@ -1644,7 +1644,7 @@ export default [
 				"Done": false,
 				"Bookmark": false,
 				"Notes": "",
-				"URL": "https://www.geeksforgeeks.org/construct-binary-tree-string-bracket-representation/",
+				"URL": "https://practice.geeksforgeeks.org/problems/construct-binary-tree-from-string-with-bracket-representation/1",
 				"URL2": "https://www.codingninjas.com/codestudio/problems/binary-tree-from-bracket_1118117?topList=love-babbar-dsa-sheet-problems"
 			},
 			{
@@ -2639,7 +2639,7 @@ export default [
 				"Done": false,
 				"Bookmark": false,
 				"Notes": "",
-				"URL": "https://stackoverflow.com/questions/45130465/inserting-at-the-end-of-stack",
+				"URL": "https://www.geeksforgeeks.org/program-to-insert-an-element-at-the-bottom-of-a-stack/",
 				"URL2": "https://www.codingninjas.com/codestudio/problems/insert-an-element-at-its-bottom-in-a-given-stack_1171166?topList=love-babbar-dsa-sheet-problems"
 			},
 			{
@@ -3706,7 +3706,7 @@ export default [
 				"Done": false,
 				"Bookmark": false,
 				"Notes": "",
-				"URL": "https://www.geeksforgeeks.org/maximum-subsequence-sum-such-that-no-three-are-consecutive/",
+				"URL": "https://practice.geeksforgeeks.org/problems/max-sum-without-adjacents-2/1",
 				"URL2": "https://www.codingninjas.com/codestudio/problems/maximum-subsequence-sum-such-that-no-three-are-consecutive_1215007?topList=love-babbar-dsa-sheet-problems"
 			},
 			{
@@ -4152,4 +4152,4 @@ export default [
 		],
 	},
 ];
-export const version = 100000025;
+export const version = 100000029;

@@ -1,6 +1,6 @@
 .container-custom {
   overflow-y: scroll;
-  height: 64vh;
+  height: 70vh;
 }
 .container::-webkit-scrollbar {
   width: 5px; /* width of the entire scrollbar */
@@ -62,6 +62,60 @@
   transform: scale(1.05);
 }
 
+
+.promotional-card {
+  /* background: #0575E6;  
+  background: -webkit-linear-gradient(to right, #021B79, #0575E6);  
+  background: linear-gradient(to right, #021B79, #0575E6);  */
+
+
+
+  
+  background: #ee0979;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+  
+
+
+
+
+  
+  
+
+
+  /* background: -webkit-linear-gradient(135deg,#6249c5 0%,#9882f3 100%,#9882f3 100%) no-repeat;  
+  background: linear-gradient(135deg,#6249c5 0%,#9882f3 100%,#9882f3 100%) no-repeat;  */
+  background-size: 200% 200%;
+
+  border-radius: 15px;
+  height: 90%;
+  animation: gradient 5s ease infinite;
+}
+
+.promotional-heading {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.promotional-subtext {
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+
+.promotional-cta {
+  color: #4f4f4f;
+  text-align: center;
+  margin-bottom: 0;
+
+}
+
 @media screen and (max-height: 650px) {
   .container-custom {
     height: 56vh;
@@ -72,4 +126,16 @@
   .container-custom {
     height: 54vh;
   }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

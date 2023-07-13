@@ -394,7 +394,7 @@
             "Topic:": "String",
             "Problem: ": "Convert a Sentence into its equivalent mobile numeric keypad sequence.",
             "Done": "<->",
-            "URL": "https://www.geeksforgeeks.org/convert-sentence-equivalent-mobile-numeric-keypad-sequence/"
+            "URL": "https://practice.geeksforgeeks.org/problems/convert-a-sentence-into-its-equivalent-mobile-numeric-keypad-sequence0547/1"
         },
         {
             "Topic:": "String",
@@ -412,7 +412,7 @@
             "Topic:": "String",
             "Problem: ": "Count of number of given string in 2D character array",
             "Done": "<->",
-            "URL": "https://www.geeksforgeeks.org/find-count-number-given-string-present-2d-character-array/"
+            "URL": "https://practice.geeksforgeeks.org/problems/count-occurences-of-a-given-word-in-a-2-d-array/1"
         },
         {
             "Topic:": "String",
@@ -466,7 +466,7 @@
             "Topic:": "String",
             "Problem: ": "Program to generate all possible valid IP addresses from given  string.",
             "Done": "<->",
-            "URL": "https://www.geeksforgeeks.org/program-generate-possible-valid-ip-addresses-given-string/"
+            "URL": "https://practice.geeksforgeeks.org/problems/generate-ip-addresses/1"
         },
         {
             "Topic:": "String",
@@ -556,7 +556,7 @@
             "Topic:": "Searching & Sorting",
             "Problem: ": "square root of an integer",
             "Done": "<->",
-            "URL": "https://practice.geeksforgeeks.org/problems/count-squares3649/1"
+            "URL": "https://practice.geeksforgeeks.org/problems/square-root/1"
         },
         {
             "Topic:": "Searching & Sorting",
@@ -586,7 +586,7 @@
             "Topic:": "Searching & Sorting",
             "Problem: ": "Searching in an array where adjacent differ by at most k",
             "Done": "<->",
-            "URL": "https://www.geeksforgeeks.org/searching-array-adjacent-differ-k/"
+            "URL": "https://practice.geeksforgeeks.org/problems/searching-in-an-array-where-adjacent-differ-by-at-most-k0456/1"
         },
         {
             "Topic:": "Searching & Sorting",
@@ -1066,7 +1066,7 @@
             "Topic:": "Binary Trees",
             "Problem: ": "Construct Binary Tree from String with Bracket Representation",
             "Done": "<->",
-            "URL": "https://www.geeksforgeeks.org/construct-binary-tree-string-bracket-representation/"
+            "URL": "https://practice.geeksforgeeks.org/problems/construct-binary-tree-from-string-with-bracket-representation/1"
         },
         {
             "Topic:": "Binary Trees",
@@ -1708,7 +1708,7 @@
             "Topic:": "Stacks & Queues",
             "Problem: ": "Implement a method to insert an element at its bottom without using any other data structure.",
             "Done": "<->",
-            "URL": "https://stackoverflow.com/questions/45130465/inserting-at-the-end-of-stack"
+            "URL": "https://www.geeksforgeeks.org/program-to-insert-an-element-at-the-bottom-of-a-stack/"
         },
         {
             "Topic:": "Stacks & Queues",
